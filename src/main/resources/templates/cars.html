@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cars Page</title>
+    </head>
+    <body>
+    <style>
+        .tr {
+            color: blue;
+        }
+        #id {
+            color: blueviolet;
+            border-width: thick;
+        }
+    </style>
+    <h1>Car records</h1>
+    <table border="10" style="color:springgreen;width:100%">
+        <tr id= "id">
+            <th>carId</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Color</th>
+            <th>Speed</th>
+            <th>BirthDate</th>
+        </tr>
+        <tr th:each="car:${cars}">
+            <td class="tr" th:text="${car.carId}" align="justify"></td>
+            <td th:text="${car.name}" align="justify"></td>
+            <td class="tr" th:text="${car.brand}" align="justify"></td>
+            <td th:text="${car.color}" align="justify"></td>
+            <td th:text="${car.speed}" align="justify"></td>
+            <td th:text="${car.birthDate}" align="justify"></td>
+            <td><a th:href="@{'/restClient/cars/showUpdatePage/' + ${car.carId}}">Update Car</a></td>
+        </tr>
+    </table>
+
+    <p><a href="/authors/showInsertPage">Show Insert Page</a></p>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{'/restClient/cars/'+ ${car.carId}}" th:object="${car}" th:method="POST">
+    <fieldset style="color:blue">
+        <legend style="color:blue"><h2>Update Author</h2></legend>
+        Name:<br>
+        <input type="text" name="name" th:field="*{name}"><br>
+        Email:<br>
+        <input type="text" name="color" th:field="*{color}"><br>
+        <input type="text" name="brand" th:field="*{brand}"><br>
+        <input type="text" name="speed" th:field="*{speed}"><br>
+        <input type="submit" value="Update Car" style="color:blue;">
+    </fieldset>
+</form>
+
+</body>
+</html>
